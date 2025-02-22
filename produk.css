@@ -1,0 +1,284 @@
+body {
+    font-family: "Poppins", serif;
+    background-color: #6f42c1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.produk-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stok {
+    color: black;
+    font-weight: bold;
+}
+
+.stok-merah {
+    color: red;
+}
+
+.stok-orange {
+    color: orange;
+}
+
+.stok-hijau {
+    color: green;
+}
+
+
+
+.card {
+    background-color: white;
+    color: #6f42c1;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    color: black;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.harga {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+}
+
+.card-content {
+    flex-grow: 1;
+    padding-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.button {
+    display: inline-block;
+    background-color: #6f42c1;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+}
+
+.button:hover {
+    background-color: #5a2a91;
+    transform: scale(1.05);
+}
+
+.button::after {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.button:hover::after {
+    opacity: 1;
+}
+
+.edit-button {
+    background-color: #6f42c1;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    max-width: 100px;
+}
+
+.edit-button:hover {
+    background-color: #5a2a91;
+    transform: scale(1.05);
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    max-width: 100px;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .produk-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .button-container {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .edit-button, .delete-button {
+        width: 100%;
+    }
+}
+
+.modal {
+    font-family: "Poppins", serif;
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.button.simpan {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button.simpan:hover {
+    background: #218838;
+}
+
+
+h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[name="update"] {
+    background-color: #6f42c1;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+button[name="update"]:hover {
+    background-color: #5a2a91;
+}
+
+img#editGambarPreview {
+    width: 100px;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
